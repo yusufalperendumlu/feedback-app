@@ -30,6 +30,7 @@ body {
   width: 100vw;
   overflow: hidden;
   flex-direction: column;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 header {
@@ -42,4 +43,32 @@ header {
 
 .container {
   padding: 1rem;
+}
+
+.card {
+  height: 5rem;
+  width: 60%;
+  padding: 1rem;
+  background: #fff;
+  color: #242424;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  position: relative;
+  border: 1px solid #a02b9a;
+  transform: translate(30%, 20%);
+}
+.card .num-display {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #a02b9a;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }/*# sourceMappingURL=index.css.map */
