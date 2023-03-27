@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import FeedbackItem from "./components/FeedbackItem";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
             {showComments && commentBlock}
 
+            <FeedbackItem />
             </div>
 
         </>
