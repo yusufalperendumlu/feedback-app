@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Header from "./components/Header";
-import FeedbackItem from "./components/FeedbackItem";
+import FeedbackList from "./components/FeedbackList";
+import IFeedbackData from "./data/IFeedbackData";
 
 
 function App() {
+
+    const[feedback, setFeedback] = useState(IFeedbackData)
 
     const title = "Blog Post";
     const body = "This is my blog post";
@@ -38,7 +42,11 @@ function App() {
 
             {showComments && commentBlock}
 
-            <FeedbackItem />
+            <div className="comment">
+                <FeedbackList feedback={feedback} />
+            </div>
+
+
             </div>
 
         </>

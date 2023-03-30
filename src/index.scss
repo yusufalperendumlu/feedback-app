@@ -55,9 +55,19 @@ header
     //color: #fff;
 }
 
+.comment
+{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+
 .card
 {
-    height: 5rem;
+    height: fit-content;
     width: 60%;
     padding: 1rem;
     background: #fff;
@@ -69,19 +79,31 @@ header
     flex-direction: column;
     border-radius: 15px;
     position: relative;
-    border: 1px solid #a02b9a;
-    transform: translate(30%, 20%);
+    border: 1px solid #9e9d9e;
 
     .num-display
     {
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.6rem;
+        width: 0.75rem;
         top: -10px;
         left: -10px;
-        background: #a02b9a;
+        background: #b144ab;
         font-weight: 700;
         color: #fff;
-        padding: 0.2rem 0.4rem;
+        padding: 0 0.5rem;
         border-radius: 50%;
         border: 1px solid #fff;
     }
 }
+
+.card.reverse
+{
+    background: #424242;
+    color: #fff;
+}
+}
+
