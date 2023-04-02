@@ -52,6 +52,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 .comment .card {
   height: -moz-fit-content;
@@ -85,7 +86,26 @@ header {
   border-radius: 50%;
   border: 1px solid #fff;
 }
+.comment .card .close {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.comment .card .close:focus {
+  outline: none;
+}
 .comment .card.reverse {
   background: #424242;
   color: #fff;
+}
+.comment .feedback-stats {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
 }/*# sourceMappingURL=index.css.map */
