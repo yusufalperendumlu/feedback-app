@@ -63,6 +63,7 @@ header
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    margin-top: 2rem;
 
 
 .card
@@ -98,6 +99,24 @@ header
         border-radius: 50%;
         border: 1px solid #fff;
     }
+
+    .close
+    {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        &:focus
+        {
+            outline: none;
+        }
+    }
+
+    
 }
 
 .card.reverse
@@ -105,5 +124,15 @@ header
     background: #424242;
     color: #fff;
 }
+
+.feedback-stats
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    
 }
 
+}
