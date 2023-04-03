@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types'
 import FeedbackItem from './FeedbackItem' 
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 
 function FeedbackList ( {feedback, handleDelete} ) {
+
+    const [animationParent] = useAutoAnimate()
+
     if (!feedback || feedback.length === 0 ) 
     {
         return (
@@ -12,7 +16,7 @@ function FeedbackList ( {feedback, handleDelete} ) {
         )
     }
     return (
-        <div className="comment">
+        <div className="comment" ref={animationParent}>
             {feedback.map((item) => (
                 <FeedbackItem 
                 key={item.id} 

@@ -34,7 +34,7 @@ body
     width: 100vw;
     overflow: hidden;
     flex-direction: column;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: sans-serif;
 }
 
 header
@@ -92,7 +92,7 @@ header
         width: 0.75rem;
         top: -10px;
         left: -10px;
-        background: #b144ab;
+        background: purple;
         font-weight: 700;
         color: #fff;
         padding: 0 0.5rem;
@@ -135,4 +135,108 @@ header
     
 }
 
+.input-group
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input
+    {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid #9e9d9e;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #242424;
+        background: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:focus
+        {
+            border: 1px solid #262b29;
+        }
+    }
+
+    button
+    {
+        position: absolute;
+        right: 0.2rem;
+        padding: 0.5rem;
+        border: none;
+        background: #575656;
+        cursor: pointer;
+        outline: none;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover
+        {
+            background: #181620;
+            color: #fff;
+        }
+    }
+
+}
+}
+
+.message
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    
+    
+    li
+    {
+        height: 25px;
+        width: 25px;
+        background: #cececeaf;
+        color: #000000;
+        padding: 0.5rem;
+        border-radius: 45px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover
+        {
+            background: purple;
+            color: #fff;
+        }
+    
+        input[type="radio"]
+        {
+            display: none;
+        }
+
+
+
+        label
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor:pointer;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+
+    } 
 }
