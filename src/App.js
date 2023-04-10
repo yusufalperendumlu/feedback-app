@@ -29,14 +29,23 @@ function App() {
       <Header />
 
       <div className="comment">
-        <Route exact path="/">
-          <FeedbackForm handleAdd={addFeedback} />
-          <FeedbackStats feedback={feedback} />
-          <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-        </Route>
-
         <Routes>
-          <Route path="/about" Component={AboutPage} />
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <FeedbackForm handleAdd={addFeedback} />
+                <FeedbackStats feedback={feedback} />
+                <FeedbackList
+                  feedback={feedback}
+                  handleDelete={deleteFeedback}
+                />
+              </>
+            }
+          ></Route>
+
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
     </Router>
