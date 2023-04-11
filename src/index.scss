@@ -48,12 +48,6 @@ header
     border-bottom: 1px solid #868686d5;
 }
 
-.container
-{
-    padding: 1rem;
-    //background-color: #242424;
-    //color: #fff;
-}
 
 .comment
 {
@@ -181,6 +175,33 @@ header
     }
 
 }
+
+.about-link
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.7rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    a
+    {
+        color: #fff;
+        text-decoration: none;
+        transition: all 100ms ease-in;
+
+        &:hover
+        {
+            color: #ff00d0;
+        }
+        
+    
+    }
+
+    
+}
 }
 
 .message
@@ -240,3 +261,4 @@ header
 
     } 
 }
+
