@@ -41,10 +41,6 @@ header {
   border-bottom: 1px solid rgba(134, 134, 134, 0.8352941176);
 }
 
-.container {
-  padding: 1rem;
-}
-
 .comment {
   width: 100vw;
   display: flex;
@@ -144,6 +140,23 @@ header {
 .comment .input-group button:hover {
   background: #181620;
   color: #fff;
+}
+.comment .about-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.comment .about-link a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 100ms ease-in;
+}
+.comment .about-link a:hover {
+  color: #ff00d0;
 }
 
 .message {
