@@ -110,6 +110,15 @@ header
         }
     }
 
+    .char-info
+    {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        width: 100%;
+        
+    }
+
     
 }
 
@@ -135,6 +144,7 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 0.5rem;
 
     input
     {

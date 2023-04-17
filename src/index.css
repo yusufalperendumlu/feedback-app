@@ -94,6 +94,12 @@ header {
 .comment .card .close:focus {
   outline: none;
 }
+.comment .card .char-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+}
 .comment .card.reverse {
   background: #424242;
   color: #fff;
@@ -110,6 +116,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 0.5rem;
 }
 .comment .input-group input {
   width: 100%;
