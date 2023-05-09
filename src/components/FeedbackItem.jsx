@@ -1,22 +1,30 @@
-import { FaTimes } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { FaEdit, FaTimes } from "react-icons/fa";
+import { useContext } from "react";
 import PropTypes from "prop-types";
 import Card from "./shared/Card";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackItem({ item, handleDelete }) {
-  const [rating, setRating] = useState();
-  const [text, setText] = useState();
+function FeedbackItem({ item }) {
+  const { deleteFeedback, editFeedback } = useContext(FeedbackContext);
 
   return (
     <Card>
       <div className="num-display">{item.rating}</div>
       <button
         onClick={() => {
-          handleDelete(item.id);
+          deleteFeedback(item.id);
         }}
         className="close"
       >
         <FaTimes style={{ color: "purple", cursor: "pointer" }} />
+      </button>
+      <button
+        className="edit"
+        onClick={() => {
+          editFeedback(item.text);
+        }}
+      >
+        <FaEdit style={{ color: "purple" }} />
       </button>
       <div className="text-display">{item.text}</div>
       {/* <button onClick={handleClick}>Click</button> */}

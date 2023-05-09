@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,7 +7,9 @@ import {
 
 import AboutPage from "./pages/AboutPage";
 
-import IFeedbackData from "./data/IFeedbackData";
+import { FeedbackProvider } from "./context/FeedbackContext";
+
+// import IFeedbackData from "./data/IFeedbackData";
 
 import Card from "./components/shared/Card";
 
@@ -21,55 +21,45 @@ import FeedbackForm from "./components/FeedbackForm";
 import Post from "./components/Post";
 
 function App() {
-  const [feedback, setFeedback] = useState(IFeedbackData);
-
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
-    setFeedback([newFeedback, ...feedback]);
-  };
-
-  const deleteFeedback = (id) => {
-    const newFeedback = feedback.filter((feedback) => feedback.id !== id);
-    setFeedback(newFeedback);
-  };
+  // const [feedback, setFeedback] = useState(IFeedbackData);
 
   return (
-    <Router>
-      <Header />
+    <FeedbackProvider>
+      <Router>
+        <Header />
 
-      <div className="comment">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <FeedbackForm handleAdd={addFeedback} />
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList
-                  feedback={feedback}
-                  handleDelete={deleteFeedback}
-                />
-              </>
-            }
-          ></Route>
+        <div className="comment">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FeedbackForm />
+                  <FeedbackStats />
+                  <FeedbackList />
+                </>
+              }
+            ></Route>
 
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/post/*" element={<Post />} />
-        </Routes>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/post/*" element={<Post />} />
+            <Route path="/*" element={<p>Not found</p>} />
+          </Routes>
 
-        <Card>
-          <NavLink to="/" activeClassName="active">
-            Home
-          </NavLink>
-          <NavLink to="/about" activeClassName="active">
-            About
-          </NavLink>
-        </Card>
+          <Card>
+            <NavLink to="/" activeClassName="active">
+              Home
+            </NavLink>
+            <NavLink to="/about" activeClassName="active">
+              About
+            </NavLink>
+          </Card>
 
-        <AboutIconLink />
-      </div>
-    </Router>
+          <AboutIconLink />
+        </div>
+      </Router>
+    </FeedbackProvider>
   );
 }
 

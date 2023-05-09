@@ -94,6 +94,19 @@ header {
 .comment .card .close:focus {
   outline: none;
 }
+.comment .card .edit {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  margin-right: 1.4rem;
+  cursor: pointer;
+}
+.comment .card .edit:focus {
+  outline: none;
+}
 .comment .card .char-info {
   display: flex;
   align-items: center;
