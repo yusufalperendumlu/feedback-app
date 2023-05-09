@@ -1,19 +1,37 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
 import RantingSelect from "./RatingSelect";
+import FeedbackContext from "../context/FeedbackContext";
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [message, setMessage] = useState("0");
 
+  const { addFeedback, feedbackEdit } = useContext(FeedbackContext);
+
+  const clearInputs = () => {
+    setText("");
+    setRating(10);
+    setbtnDisabled(true);
+    setMessage("0");
+  };
+
+  useEffect(() => {
+    if (feedbackEdit.edit === true) {
+      setbtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
+
   const handleTextChange = (e) => {
     if (text === "") {
       setbtnDisabled(true);
       setMessage(e.target.value.length);
-    } else if (text !== "" && text.trim().length <= 10) {
+    } else if (text && text.trim().length <= 10) {
       setbtnDisabled(true);
       setMessage(e.target.value.length);
     } else {
@@ -26,15 +44,16 @@ const FeedbackForm = ({ handleAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim().length > 10) {
+    if (text.length > 10) {
       const newFeedback = {
         text,
         rating,
       };
 
-      handleAdd(newFeedback);
+      addFeedback(newFeedback);
 
       setText("");
+      clearInputs();
     }
   };
 

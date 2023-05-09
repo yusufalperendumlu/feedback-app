@@ -110,6 +110,23 @@ header
         }
     }
 
+    .edit
+    {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        margin-right: 1.4rem;
+        cursor: pointer;
+
+        &:focus
+        {
+            outline: none;
+        }
+    }
+
     .char-info
     {
         display: flex;
